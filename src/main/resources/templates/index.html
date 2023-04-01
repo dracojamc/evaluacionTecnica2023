@@ -1,0 +1,203 @@
+<head>
+	<script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+	<script>
+		jQuery("document").ready(function($){
+			$("#cubo").on("click", function() {
+				var cuborubik = $("#_cubo").val();
+								
+		    	cuborubik = JSON.parse(cuborubik);
+		    	cuborubik = JSON.stringify(cuborubik);
+						
+				$.ajax({
+					url: "/cuborubik",
+					type: "POST",
+					data: cuborubik,
+					contentType: "application/json",
+					success: function (str) {
+						alert(str);
+					}
+				});
+			});
+			
+			$("#ajedrez").on("click", function() {
+				var ajedrez = $("#_ajedrez").val();
+								
+		    	ajedrez = JSON.parse(ajedrez);
+		    	ajedrez = JSON.stringify(ajedrez);
+						
+				$.ajax({
+					url: "/ajedrez",
+					type: "POST",
+					data: ajedrez,
+					contentType: "application/json",
+					success: function (str) {
+						alert(str);
+					}
+				});
+			});
+			
+			$("#sudoku").on("click", function() {
+				var sudoku = $("#_sudoku").val();
+								
+		    	sudoku = JSON.parse(sudoku);
+		    	sudoku = JSON.stringify(sudoku);
+						
+				$.ajax({
+					url: "/sudoku",
+					type: "POST",
+					data: sudoku,
+					contentType: "application/json",
+					success: function (str) {
+						alert(str);
+					}
+				});
+			});
+		});
+	</script>
+</head>
+
+<h1>Cubo Rubik</h1>
+<textarea id="_cubo" style="width: 800px; height: 400px;">
+{
+	"caras" : [
+	{
+		"lineas": [{
+			"cuadros" : [{"cuadro":0},{"cuadro":0},{"cuadro":0}]
+		},
+		{
+			"cuadros" : [{"cuadro":0},{"cuadro":0},{"cuadro":0}]
+		},
+		{
+			"cuadros" : [{"cuadro":0},{"cuadro":0},{"cuadro":0}]
+		}]
+	},{
+		"lineas": [{
+			"cuadros" : [{"cuadro":1},{"cuadro":1},{"cuadro":1}]
+		},
+		{
+			"cuadros" : [{"cuadro":1},{"cuadro":1},{"cuadro":1}]
+		},
+		{
+			"cuadros" : [{"cuadro":1},{"cuadro":1},{"cuadro":1}]
+		}]
+	},{
+		"lineas": [{
+			"cuadros" : [{"cuadro":2},{"cuadro":2},{"cuadro":2}]
+		},
+		{
+			"cuadros" : [{"cuadro":2},{"cuadro":2},{"cuadro":2}]
+		},
+		{
+			"cuadros" : [{"cuadro":2},{"cuadro":2},{"cuadro":2}]
+		}]
+	},{
+		"lineas": [{
+			"cuadros" : [{"cuadro":3},{"cuadro":3},{"cuadro":3}]
+		},
+		{
+			"cuadros" : [{"cuadro":3},{"cuadro":3},{"cuadro":3}]
+		},
+		{
+			"cuadros" : [{"cuadro":3},{"cuadro":3},{"cuadro":3}]
+		}]
+	},{
+		"lineas": [{
+			"cuadros" : [{"cuadro":4},{"cuadro":4},{"cuadro":4}]
+		},
+		{
+			"cuadros" : [{"cuadro":4},{"cuadro":4},{"cuadro":4}]
+		},
+		{
+			"cuadros" : [{"cuadro":4},{"cuadro":4},{"cuadro":4}]
+		}]
+	},{
+		"lineas": [{
+			"cuadros" : [{"cuadro":5},{"cuadro":5},{"cuadro":5}]
+		},
+		{
+			"cuadros" : [{"cuadro":5},{"cuadro":5},{"cuadro":5}]
+		},
+		{
+			"cuadros" : [{"cuadro":5},{"cuadro":5},{"cuadro":5}]
+		}]		
+	}]
+}
+</textarea>
+<h4>Nota: Numeros representan un color</h4>
+<br />
+<input type="button" id="cubo" value="enviar" />
+
+<h1>Ajedrez</h1>
+<textarea id="_ajedrez" style="width: 1200px; height: 400px;">
+{
+	"cara" : 
+	{
+		"lineas": [{
+			"cuadros" : [{"cuadro":1},{"cuadro":0},{"cuadro":0},{"cuadro":0},{"cuadro":0},{"cuadro":0},{"cuadro":0},{"cuadro":0}]
+		},
+		{
+			"cuadros" : [{"cuadro":0},{"cuadro":0},{"cuadro":0},{"cuadro":0},{"cuadro":1},{"cuadro":0},{"cuadro":0},{"cuadro":0}]
+		},
+		{
+			"cuadros" : [{"cuadro":0},{"cuadro":0},{"cuadro":0},{"cuadro":0},{"cuadro":0},{"cuadro":0},{"cuadro":0},{"cuadro":1}]
+		},
+		{
+			"cuadros" : [{"cuadro":0},{"cuadro":0},{"cuadro":0},{"cuadro":0},{"cuadro":0},{"cuadro":1},{"cuadro":0},{"cuadro":0}]
+		},
+		{
+			"cuadros" : [{"cuadro":0},{"cuadro":0},{"cuadro":1},{"cuadro":0},{"cuadro":0},{"cuadro":0},{"cuadro":0},{"cuadro":0}]
+		},
+		{
+			"cuadros" : [{"cuadro":0},{"cuadro":0},{"cuadro":0},{"cuadro":0},{"cuadro":0},{"cuadro":0},{"cuadro":1},{"cuadro":0}]
+		},
+		{
+			"cuadros" : [{"cuadro":0},{"cuadro":1},{"cuadro":0},{"cuadro":0},{"cuadro":0},{"cuadro":0},{"cuadro":0},{"cuadro":0}]
+		},
+		{
+			"cuadros" : [{"cuadro":0},{"cuadro":0},{"cuadro":0},{"cuadro":1},{"cuadro":0},{"cuadro":0},{"cuadro":0},{"cuadro":0}]
+		}]		
+	}
+}
+</textarea>
+<h4>Nota: 0 -> campo vacio, 1 -> Reina</h4>
+<br />
+<input type="button" id="ajedrez" value="enviar" />
+
+<h1>Sudoku</h1>
+<textarea id="_sudoku" style="width: 1200px; height: 400px;">
+{
+	"cara" : 
+	{
+		"lineas": [{
+			"cuadros" : [{"cuadro":5},{"cuadro":3},{"cuadro":4},{"cuadro":6},{"cuadro":7},{"cuadro":8},{"cuadro":9},{"cuadro":1},{"cuadro":2}]
+		},
+		{
+			"cuadros" : [{"cuadro":6},{"cuadro":7},{"cuadro":2},{"cuadro":1},{"cuadro":9},{"cuadro":5},{"cuadro":3},{"cuadro":4},{"cuadro":8}]
+		},
+		{
+			"cuadros" : [{"cuadro":1},{"cuadro":9},{"cuadro":8},{"cuadro":3},{"cuadro":4},{"cuadro":2},{"cuadro":5},{"cuadro":6},{"cuadro":7}]
+		},
+		{
+			"cuadros" : [{"cuadro":8},{"cuadro":5},{"cuadro":9},{"cuadro":7},{"cuadro":6},{"cuadro":1},{"cuadro":4},{"cuadro":2},{"cuadro":3}]
+		},
+		{
+			"cuadros" : [{"cuadro":4},{"cuadro":2},{"cuadro":6},{"cuadro":8},{"cuadro":5},{"cuadro":3},{"cuadro":7},{"cuadro":9},{"cuadro":1}]
+		},
+		{
+			"cuadros" : [{"cuadro":7},{"cuadro":1},{"cuadro":3},{"cuadro":9},{"cuadro":2},{"cuadro":4},{"cuadro":8},{"cuadro":5},{"cuadro":6}]
+		},
+		{
+			"cuadros" : [{"cuadro":9},{"cuadro":6},{"cuadro":1},{"cuadro":5},{"cuadro":3},{"cuadro":7},{"cuadro":2},{"cuadro":8},{"cuadro":4}]
+		},
+		{
+			"cuadros" : [{"cuadro":2},{"cuadro":8},{"cuadro":7},{"cuadro":4},{"cuadro":1},{"cuadro":9},{"cuadro":6},{"cuadro":3},{"cuadro":5}]
+		},
+		{
+			"cuadros" : [{"cuadro":3},{"cuadro":4},{"cuadro":5},{"cuadro":2},{"cuadro":8},{"cuadro":6},{"cuadro":1},{"cuadro":7},{"cuadro":9}]
+		}]		
+	}
+}
+</textarea>
+<br />
+<br />
+<input type="button" id="sudoku" value="enviar" />
